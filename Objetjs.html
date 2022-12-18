@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combo box années</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        class Article {
+            constructor(produit, reference, prixHt) {
+                //this : allocation en mémoire d'un nouvel objet
+                this.produit = produit;
+                this.reference = reference;
+                this.prixHt = prixHt;
+                // console.log('typeof =>' + typeof this);  //type objet
+                // console.log(this);   //le nouvel objet
+                //return du this au moment du new
+            }
+            calculPrixTTC() {
+                const TVA = 1.196;
+                return this.prixHt * TVA;
+            }
+        }
+        //comment se servir d'une classe parent pour créer une classe enfant(extention de la classe Article)
+        class Promo extends Article {
+            constructor(produit, reference, prixHt, remise) {
+                //appel de le constructeur parent en utilisant le mot reserv (super)
+                super(produit, reference, prixHt);
+                this.remise = remise;
+            }
+            CalculPrixPromo() {
+                //dans la methode on doit utiluser la notation pointée (super.)
+                return super.calculPrixTTC() * this.remise;
+            }
+        }
+        //.................................................................................//
+        //je vais creer un premier objet en nstanciant la class Article
+        var article1 = new Article("chaussures", 2514, 85);
+        //creer un autre objet instance de la classe Article
+        var article2 = new Article("sac a dos", 5555, 40);
+        //je vais calculer le prix TTC pour article 1 et article 2
+        console.log('Prix TTC de article 1 :' + article1.calculPrixTTC());
+        console.log('Prix TTC de article 2 :' + article2.calculPrixTTC());
+        //.....................................instancier la classe Promo............................//
+        //var promo1 = new Promo("chaussures", 2514, 85, 0.6);
+        //console.log(promo1);
+        // tester si un proprieté existe dans n objet
+        var promo = new Promo("chaussures", 2514, 85, 0.6);
+        if(promo.hasOwnProperty('remise')){
+            console.log('remise existe dans l\'objet');
+        }
+        //False car CalculPrixPromo se trouve dans le prototype de Promo
+        console.log(promo.hasOwnProperty('CalculPrixPromo'));
+        // False car valuOf se trouve dans le prototype de l'objet
+        console.log(promo.hasOwnProperty('ValuOf'));//Valueof:return la valeur primitive une valeur
+        //qui n'est pas un objet ou bien une methode en js
+        //ou bien autre moyen pour tester:
+        console.log('remise' in promo); //true
+        console.log('ValueOf' in promo); //False
+        //......................................................................
+        //Parcourir la liste des proprietés 
+        var promo = new Promo("chaussures", 2514, 85, 0.6);
+        //boucle sur les proprietés de l'objet
+        for(var pro in promo) console.log(pro);
+        //......................................................................
+        //passer un objet en paramétre d'appel d'une fonction
+
+        //il est possible de modifier la valeur d'une proprieté d'un objet car c'est l'adresse de l'objet qui est passée au moment de l'appel
+        var article1 = new Article("chaussures", 2514, 85);
+        function modifier(unObjet){
+            unObjet.prixHt = 20;
+        }
+        modifier(article1)
+        console.log(article1.prixHt);
+
+    </script>
+</body>
+
+</html>

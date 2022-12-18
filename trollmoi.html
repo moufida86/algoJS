@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>troll</title>
+</head>
+
+<body>
+
+    <script>
+        let troll = prompt("donner une action 1:Fuir , 2: combattre , 3: se cacher");
+        let conf;
+       
+        switch (troll) {
+            case '1':
+                conf = confirm('est ce que vous etes rapide?');
+                if (! conf)
+                    console.log('le troll vous rattrape et vous dévore');
+                else
+                    console.log('le troll vous sauvez de justesse');
+                break;
+
+
+            case '2':
+                confirm('est ce que vous etes fort?');
+                if (!conf)
+                    console.log('le troll vous assome et vous dévore');
+                else
+                    console.log('vous massacrez ce pauvre troll');
+                break;
+
+
+            case '3':
+                conf= confirm('est ce que vous etes furtif?');
+                if (!confirm)
+                    console.log('le troll vous trouve et vous dévore');
+                else
+                    console.log('le troll ne vous voit pas et passe son chemin');
+                break;
+            default:
+                console.log('veillez donner une action valide');
+        }
+
+
+    </script>
+
+</body>
+
+</html>

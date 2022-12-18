@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>conversion</title>
+</head>
+<body>
+
+<script>
+
+var Year = parseInt(prompt("donner une année"));
+
+// test si age n'est pas évalué comme false
+// évaluation implicite
+if (! Year) {
+console.log("veuillez entrez votre age");
+}
+
+
+if ((Year % 4)==0 && (Year % 100) > 1 || ((Year % 400)==0)) {
+console.log("année bissextile");
+}
+else{
+    console.log("année non bissextile");
+    
+}
+
+</script>
+
+
+
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisextile</title>
+    <script>
+        year = prompt("Année");
+
+        isLeapYear = year % 4 == 0 && year % 100 > 0;
+        isLeapYear = isLeapYear || year % 400 == 0;
+
+        if (!year) {
+            console.error("Veuillez entrer l'année");
+        } else if (isLeapYear) {
+            console.log("Bisextile")
+        } else {
+            console.log("non bisextile")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

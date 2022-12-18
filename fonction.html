@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    
+    <div id="target"></div>
+
+    <script>
+        var output = document.getElementById("target");
+    
+        function yearlist (FirstYear, nbr) {
+            html = "<select><option> --Please choose year-- </option>";
+            for (var i = 0; i < nbr; i++) {
+                html += `<option value=`+i+`">`+ (FirstYear+i)+ `</option> `;
+            }
+            html += "</select>";
+            return (html)
+        }
+            output.innerHTML = yearlist(2000, 10);
+
+
+
+    </script>
+</body>
+
+</html>

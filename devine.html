@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devine</title>
+    <script>
+        // a voir
+        //le nombre a deviner
+        secretNumner = Math.ceil(Math.random() * 100);
+        //le nombre de tentatives
+        let tries = 0;
+        // la saisi de joueur
+        let guess;
+        // le message du systeme
+        let message = "";
+        do {
+            guess = parseInt(prompt(message + "\n un nombre entier entre 1 et 100"));
+            //si la saisi est valide
+            if (guess) {
+                tries++;
+                if (guess == secretNumner) {
+                    message = `Bravo vous avez gagné en ${tries}
+        coups`;
+        else if (guess < secretNumner) {
+                        message = `tres petit`;
+                    }
+                    else {
+                        message = `tres grand`;
+                    }
+                    while (guess == secretNumner)
+    
+            }
+
+
+
+
+        // var min = 1;
+        // var max = 100;
+        // var i = 0;
+        // const random = Math.floor(Math.random() * (max - min)) + min;
+        // alert(random);
+        // do {
+        //     var n = parseInt(prompt("donner un nombre"));
+
+        //     if (n < random) {
+        //         console.log('le nombre saisi est plus petit');
+        //     }
+        //     else if (n > random) {
+        //         console.log('le nombre saisi est plus grand');
+        //     }
+        //     }
+
+        //     while ( n == random)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

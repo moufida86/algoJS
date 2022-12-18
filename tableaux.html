@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const tab = [2, 5, 8, 78,4250, 0, 1];
+        var valeurmax = 0;
+        var indexMax = tab[0];
+        for (var index in tab) {
+            if (tab[0] < tab[index]){
+                valeurmax = tab[index];
+                indexMax = index;
+            }
+        }
+        console.log(`l'indice le plus grand est:`, indexMax, `qui contient la valeur`, tab[indexMax]);
+    </script>
+</body>
+
+</html>

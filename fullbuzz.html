@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>conversion</title>
+</head>
+<body>
+
+<script>
+
+var Nbr = parseInt(prompt("donner un nombre"));
+
+// if (!Nbr) {
+// console.log("veuillez saisir un nombre");
+// }
+// else if(Nbr % 15 == 0) 
+// {
+//     console.log("fizzbuzz");}
+
+// else if(Nbr % 3 == 0) {
+// console.log("fizz");}
+
+// else if( Nbr % 5  == 0 ){
+//     console.log("buzz"); }    
+// else {
+//     console.log(Nbr);
+// }
+
+
+
+//une autre methode 
+let output = "";
+// if (Nbr % 3 == 0) output += "fizz";
+// if (Nbr % 5 == 0) output += "buzz";
+// if (Nbr % 3 == "") output "Nbr";
+// alert(output);
+
+//une deriniere possiblilité
+output = Nbr % 15 == 0 ?"fizzbuzz" : Nbr % 3 == 0 ?"fizz" : Nbr % 5 == 0 ?"buzz" : Nbr;
+alert(output);
+
+</script>
+</body>
+</html>
